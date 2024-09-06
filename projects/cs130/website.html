@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3school.css">
+    <link rel="stylesheet" href="css/black-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="myPage">
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+                href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+            <a class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Anime Mania</a>
+            <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="html/latest.html">Latest Release</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button" title="Notifications">Browse<i class="fa fa-caret-down"></i></button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a class="w3-bar-item w3-button">New</a>
+                    <a class="w3-bar-item w3-button">Popular</a>
+                    <a class="w3-bar-item w3-button">Anticipated</a>
+                    <a class="w3-bar-item w3-button" href="html/recommended.html">Recommended</a>
+                </div>
+            </div>
+            <div class="w3-right-align_nipun">
+                <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="html/Trial.html">Try Free
+                    Premium</a>
+                <a class="w3-bar-item w3-button w3-hide-small w3-hover-white">search</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <a class="w3-bar-item w3-button"><i class="fa fa-user w3-margin-right"></i></a>
+                    <button class="w3-button" title="Notifications"></i></i></button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                        <a class="w3-bar-item w3-button" href="html/sign-in.html" target=" _blank">Sign In</a>
+                        <a class="w3-bar-item w3-button" href="html/log-in.html" target="_blank">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-bar w3-theme-d2 w3-right-align">
+
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+            <a href="#team" class="w3-bar-item w3-button">Team</a>
+            <a href="#work" class="w3-bar-item w3-button">Work</a>
+            <a href="#pricing" class="w3-bar-item w3-button">Price</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            <a href="#" class="w3-bar-item w3-button">Search</a>
+        </div>
+    </div>
+
+    <!-- Image Header -->
+    <div class="w3-display-container w3-animate-opacity">
+        <div class="container">
+            <img src="images/allanimew.webp" alt="boat" style="width:100%;height:800px" class="image1">
+            <div class="text">Anime Mania</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top">
+            <header class="w3-container w3-teal w3-display-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                <h4>Oh snap! We just showed you a modal..</h4>
+                <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+            </header>
+            <div class="w3-container">
+                <p>Cool huh? Ok, enough teasing around..</p>
+                <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!
+                </p>
+            </div>
+            <footer class="w3-container w3-teal">
+                <p>Modal footer</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Team Container -->
+    <div class="w3-container w3-padding-64 w3-center" id="team">
+        <h2>WHY PICK US</h2>
+        <p>Reasons Too Join!</p>
+
+        <div class="w3-row"><br>
+
+            <div class="w3-quarter">
+                <img src="images/tailored.jpeg" alt="Boss" style="width:50%" class="w3-circle w3-hover-opacity">
+                <h4>Anime Tailored To Your Taste</h4>
+            </div>
+
+            <div class="w3-quarter">
+                <img src="images/switch.jpg" alt="Boss" style="width:44%" class="w3-circle w3-hover-opacity">
+                <h4>Cancel Or Switch Plans Anytime</h4>
+            </div>
+
+            <div class="w3-quarter">
+                <img src="images/heart.png" alt="Boss" style="width:41%" class="w3-circle w3-hover-opacity">
+                <h4>A Place To Relax And Enjoy</h4>
+            </div>
+
+            <div class="w3-quarter">
+                <img src="images/tv.png" alt="Boss" style="width:44%" class="w3-circle w3-hover-opacity">
+                <h4>For Your Phone, Tablet, Laptop And TV</h4>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Work Row -->
+    <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+        <div class="w3-quarter">
+            <h2>Our Plans</h2>
+            <p>Our commitment to excellence extends to all our paid plans, ensuring that our users enjoy the highest
+                quality streaming experience. With our premium packages, you can indulge in your favorite content in
+                stunning 4K resolution, immersing yourself in every detail and vibrant color. Say goodbye to
+                frustrating
+                buffering and annoying ads; we guarantee uninterrupted viewing pleasure, allowing you to dive deep
+                into
+                the world of entertainment without any distractions. Join us today and elevate your viewing
+                experience
+                to new heights with our premium services.</p>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card w3-white">
+                <img src="images/single.png" alt="Snow" style="width:80%">
+                <div class="w3-container">
+                    <h3>Single User Package</h3>
+                    <h4>Price: $9.99/month</h4>
+                    <p>Features:
+                        <br>
+                        Full access to basic features
+                        <br>
+                        24/7 customer support
+                        <br>
+                        Monthly updates
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card w3-white">
+                <img src="images/family.jpg" alt="Lights" style="width:74%">
+                <div class="w3-container">
+                    <h3>Family Pack</h3>
+                    <h4>Price: $19.99/month</h4>
+                    <p>Features:
+                        <br>
+                        Up to 5 users
+                        <br>
+                        Full access to premium features
+                        <br>
+                        24/7 family support
+                        <br>
+                        Monthly family updates
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-quarter">
+            <div class="w3-card w3-white">
+                <img src="images/student.jpg_large" alt="Mountains" style="width:67%">
+                <div class="w3-container">
+                    <h3>Student Discount</h3>
+                    <h4>Price: $4.99/month</h4>
+                    <p>Features:
+                        <br>
+                        Full access to basic features
+                        <br>
+                        Verification required (e.g., valid student ID)
+                        <br>
+                        24/7 student support
+                        <br>
+                        Monthly updates
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Pricing Row -->
+    <div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+        <h2>Frequently Asked Questions</h2><br>
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">What is Anime Mania?</p>
+                    <p>The Best Anime Streaming Platform.</p>
+            </ul>
+        </div>
+
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Where can I watch?</p>
+                    <p>You can <a href="html/sign-in.html">sing in</a> and watch it on any device.</p>
+            </ul>
+        </div>
+
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Refunds?</p>
+                    <p>Instant refunds if expectations not met.</p>
+            </ul>
+        </div>
+
+
+        <!-- Contact Container -->
+        <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+            <div class="w3-row">
+                <div class="w3-col m5">
+                    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span>
+                    </div>
+                    <h3>Address</h3>
+                    <p>700 College Drive</p>
+                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;Iowa, US</p>
+                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;+00 1515151515</p>
+                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>&nbsp;&nbsp;yonjni01@luther.com</p>
+                </div>
+                <div class="w3-col m7">
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php"
+                        target="_blank">
+                        <div class="w3-section">
+                            <label>Name</label>
+                            <input class="w3-input" type="text" name="Name" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Email</label>
+                            <input class="w3-input" type="text" name="Email" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Message</label>
+                            <input class="w3-input" type="text" name="Message" required>
+                        </div>
+                        <input class="w3-check" type="checkbox" checked name="Like">
+                        <label>I Like it!</label>
+                        <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image of location/map -->
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+            <h4>Follow Us</h4>
+            <a class="w3-button w3-large w3-teal" href="https://www.facebook.com/nipun.yonjan/" title="Facebook"
+                target="_blank"><i class="fa fa-facebook"></i></a>
+            <a class="w3-button w3-large w3-teal" href="https://twitter.com/?lang=en" title="Twitter" target="_blank"><i
+                    class="fa fa-twitter"></i></a>
+            <a class="w3-button w3-large w3-teal" href="https://www.google.com/" title="Google +"><i
+                    class="fa fa-google-plus"></i></a>
+            <a class="w3-button w3-large w3-teal" href="https://www.instagram.com/nipunyonjan_/" title="Google +"
+                target="_blank"><i class="fa fa-instagram"></i></a>
+            <a class="w3-button w3-large w3-teal w3-hide-small" href="https://www.linkedin.com/" title="Linkedin"
+                target="_blank"><i class="fa fa-linkedin"></i></a>
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+
+            <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+                <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+                        <i class="fa fa-chevron-circle-up"></i></span></a>
+            </div>
+        </footer>
+
+        <script>
+            // Script for side navigation
+            function w3_open() {
+                var x = document.getElementById("mySidebar");
+                x.style.width = "300px";
+                x.style.paddingTop = "10%";
+                x.style.display = "block";
+            }
+
+            // Close side navigation
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+
+            // Used to toggle the menu on smaller screens when clicking on the menu button
+            function openNav() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/sign-in.css" />
+    <link rel="stylesheet" href="../css/w3school.css">
+    <link rel="stylesheet" href="../css/black-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration</title>
+
+
+    <script companyId="2796" src="https://c.evidon.com/dg/dg.js"></script>
+
+
+    <script src='/static/scripts/datadog.5f4641f2.js' client_token="pub60057fb52af8be8014a1ec769e8160aa"
+        application_id="270f7080-790a-4a2e-ac4b-1023940f7369" site="us5.datadoghq.com" service="etp-sso" env="prod"
+        version="086a23f"></script>
+
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeQj_wUAAAAABLdMxMxFF-x3Jvyd1hkbsRV9UAk"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push(
+                { 'gtm.start': new Date().getTime(), event: 'gtm.js' }
+            ); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PK7T4JG');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        const LOCALE = 'en-US';
+        const DOMAIN = 'crunchyroll.com';
+        const LABEL_SHOW = 'Show';
+        const LABEL_HIDE = 'Hide';
+    </script>
+    <script>
+        window.etp = {
+            initAnalytics: function () {
+                if (document.cookie.indexOf('ajs_user_id=') >= 0) {
+                    window.analytics.reset();
+                }
+            },
+            config: {
+                analytics: {
+                    writeKey: 'sNoWZ5ozQGjez6DOvhmYVAb0GCznW5n9',
+                    defaultApiHost: 'cr-eec.etp-prod.com/v1',
+                },
+            },
+        };
+    </script>
+    <script src="https://static.crunchyroll.com/analytics/segment.v5.0.0.js"></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK7T4JG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="cx-app">
+
+        <header class="cx-header">
+
+            <div class="w3-top">
+                <div class="w3-bar w3-theme-d2 w3-left-align">
+                    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+                        href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                    <a class="w3-bar-item w3-button w3-teal" href="../website.html"><i
+                            class="fa fa-home w3-margin-right"></i>Anime Mania</a>
+                    <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="latest.html">Latest
+                        Release</a>
+                    <div class="w3-dropdown-hover w3-hide-small">
+                        <button class="w3-button" title="Notifications">Browse<i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                            <a class="w3-bar-item w3-button">New</a>
+                            <a class="w3-bar-item w3-button">Popular</a>
+                            <a class="w3-bar-item w3-button">Anticipated</a>
+                            <a class="w3-bar-item w3-button" href="recommended.html">Recommended</a>
+                        </div>
+                    </div>
+                    <div class="w3-right-align_nipun">
+                        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="Trial.html">Try Free
+                            Premium</a>
+                        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white">search</a>
+                        <div class="w3-dropdown-hover w3-hide-small">
+                            <a class="w3-bar-item w3-button"><i class="fa fa-user w3-margin-right"></i></a>
+                            <button class="w3-button" title="Notifications"></i></i></button>
+                            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                                <a class="w3-bar-item w3-button" href="sign-in.html" target="_blank">Sign In</a>
+                                <a class="w3-bar-item w3-button" href="log-in.html" target="_blank">Log In</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        </header>
+
+        <div class="cx-content">
+            <div class="cx-decoration">
+                <svg class="cx-decoration__lines cx-decoration__top-left-lines" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 388 727" data-t="lines-svg" aria-labelledby="lines-svg" aria-hidden role="img">
+                    <title id="lines-svg">Lines</title>
+                    <path
+                        d="M168.269 66.4821L268.943 1.5908L268.401 0.750275L166.986 66.1194L1.1366 19.0246L0.863435 19.9866L165.874 66.8429L71.2691 127.822L0.729147 173.285L1.27088 174.126L95.4719 113.414L167.155 67.2068L291.724 102.579L143.515 419.707L1.41119 214.332L0.588844 214.901L143.025 420.756L0.546997 725.788L1.45303 726.212L143.684 421.711L223.665 537.305L224.487 536.736L144.175 420.662L292.701 102.855L386.952 129.618L387.226 128.656L293.131 101.937L340.122 1.38222L339.217 0.958847L292.156 101.66L168.269 66.4821Z">
+                    </path>
+                </svg><svg class="cx-decoration__lines cx-decoration__top-right-lines"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 457 163" data-t="lines-svg"
+                    aria-labelledby="lines-svg" aria-hidden role="img">
+                    <title id="lines-svg">Lines</title>
+                    <path d="M456.334 162.725L0.333679 1.85438L0.66637 0.911346L456.666 161.782L456.334 162.725Z">
+                    </path>
+                </svg>
+                <svg class="cx-decoration__lines cx-decoration__bottom-left-lines" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 205 92" data-t="lines-svg" aria-labelledby="lines-svg" aria-hidden role="img">
+                    <title id="lines-svg">Lines</title>
+                    <path
+                        d="M1.0608 0.0432434L89.5033 39.4213L126.086 55.7013L125.68 56.6149L89.0967 40.3349L0.654053 0.956785L1.0608 0.0432434ZM133.478 58.9914L134.904 59.6264L204.699 90.5414L204.702 90.5429L204.301 91.4586L204.298 91.4572L189.498 85.0306L189.494 85.0288L134.501 60.5418L133.007 59.8799L133.478 58.9914Z">
+                    </path>
+                </svg>
+                <svg class="cx-decoration__lines cx-decoration__bottom-right-lines" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 814 424" data-t="lines-svg" aria-labelledby="lines-svg" aria-hidden role="img">
+                    <title id="lines-svg">Lines</title>
+                    <path
+                        d="M555.302 -0.000961304L813.364 273.714L812.636 274.4L554.574 0.685034L555.302 -0.000961304ZM0.224352 237.744L326.769 280.873L279.047 245.432L279.643 244.63L328.809 281.142L813.066 345.104L812.935 346.095L330.464 282.37L519.798 422.972L519.202 423.775L328.424 282.101L0.0934143 238.736L0.224352 237.744Z">
+                    </path>
+                </svg>
+            </div>
+
+
+            <script>
+                window.WEAK_PASSWORD = 'Weak password';
+                window.STRONG_PASSWORD = 'Strong password';
+                window.GOOD_PASSWORD = 'Good password';
+                window.AT_LEAST_6_CHARS_PASSWORD = 'Use at least 6 characters, do not use empty spaces';
+                window.EMAIL_INVALID_TEXT = 'Please enter a valid email.';
+                window.CREATE_ACC_BTN_TEXT = 'CREATE ACCOUNT';
+                window.TO_LOGIN_BTN_TEXT = 'LOG IN';
+            </script>
+            <main class="cx-content-wrapper cx-register">
+                <form id="post_form" method="post" class="cx-auth-form" autocomplete="off">
+                    <h1 class="cx-auth-form__title cx-heading cx-heading--l">
+                        14 DAYS FREE PREMIUM
+                    </h1>
+                    <div class="cx-auth-form__card">
+
+                        <div class="cx-input cx-text cx-text--xl">
+                            <label class="cx-input__label">
+                                <div class="cx-input__text-wrapper">
+                                    <span class="cx-input__text">
+                                        Email Address
+                                    </span>
+                                </div>
+                                <input id="email_input" class="cx-input__field" type="email" autocomplete="off"
+                                    name="email" value="" />
+                            </label>
+                        </div>
+
+                        <div class="cx-input cx-text cx-text--xl cx-password-input" data-t="password">
+                            <label class="cx-input__label cx-password-input__label">
+                                <div class="cx-input__text-wrapper">
+                                    <span class="cx-input__text">Password</span>
+                                </div>
+                                <input id="password_input" class="cx-input__field cx-password-input__field "
+                                    type="password" value="" autocomplete="off" name="password" data-t="password" />
+                                <span class="cx-password-input__button-wrapper">
+                                    <button type="button" class="cx-cta cx-cta--s cx-password-input__button"
+                                        data-t="show-password">
+                                        Show
+                                    </button>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="cx-password-strength-meter">
+                            <small class="cx-text cx-text--s cx-text--semibold cx-password-strength-meter__label">
+                                Use at least 6 characters, do not use empty spaces
+                            </small>
+                            <div class="cx-password-strength-meter__tiles">
+                                <div class="cx-password-strength-meter__tile"></div>
+                                <div class="cx-password-strength-meter__tile"></div>
+                                <div class="cx-password-strength-meter__tile"></div>
+                            </div>
+                        </div>
+
+                        <div class="cx-checkbox">
+                            <label class="cx-checkbox__label">
+                                <input class="cx-checkbox__input" type="checkbox" name="notifications" checked />
+                                <span class="cx-checkbox__marker">
+                                    <span class="cx-checkbox__checkmark">
+                                        <svg class="cx-checkbox__svg" viewBox="2 2 16 16">
+                                            <path class="cx-checkbox__path"
+                                                d="M6,10 C7.93333333,12 8.93333333,13 9,13 C9.06666667,13 10.7333333,11 14,7"
+                                                stroke-width="2" />
+                                        </svg>
+                                    </span>
+                                    <span class="cx-text cx-text--m">I want all the latest Crunchyroll info, offers, and
+                                        news.</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="cx-auth-form__legal-info cx-text cx-text--s">
+                        By creating an account you&#39;re agreeing to our
+                        <a href="https://www.crunchyroll.com/tos" class="cx-auth-form__legal-info-link">
+                            Terms
+                        </a>
+                        &amp;
+                        <a href="https://www.crunchyroll.com/privacy/" class="cx-auth-form__legal-info-link">
+                            Privacy Policy
+                        </a>
+                        , and you confirm that you are at least 16 years of age.
+                    </p>
+                    <div class="cx-auth-form__actions">
+                        <button id="submit_button" class="cx-button cx-button--type-one" type="button">
+                            SET UP PAYMENT METHOD
+                        </button>
+                    </div>
+                    <div class="cx-auth-form__navigation cx-text cx-text--m">
+                        Already have an account?
+                        <a id="on_to_login_click" href="#" class="cx-auth-form__navigation-link">
+                            LOG IN
+                        </a>
+                    </div>
+                    <input type="hidden" name="csrf_token" value="3n9TJ94novA5O_0OdHMPLe9O57MYyNL2" />
+                    <input data-role="anonymous_id" type="hidden" name="anonymous_id" value="" />
+                    <input data-role="recaptcha_token" type="hidden" name="recaptcha_token" value="" />
+                </form>
+            </main>
+            <script type="module" src='/static/analytics/register.b30463c9.js'></script>
+
+            <script type="module" src='/static/scripts/register.dbd5e100.js'></script>
+            <script type="module" src='/static/scripts/strengthMeter.7ec4163f.js'></script>
+            <script src='/static/scripts/checkbox.97a1da9d.js'></script>
+
+
+
+            <footer class="cx-footer">
+                <div class="cx-footer__content">
+                    <div class="cx-footer__top-section">
+                        <ul class="cx-footer__links-list">
+                            <li class="cx-footer__links-list-item">
+                                <a href="https://www.crunchyroll.com/tos" class="cx-footer__link cx-text cx-text--m">
+                                    Terms of Use
+                                </a>
+                            </li>
+                            <li class="cx-footer__links-list-item">
+                                <a href="https://www.crunchyroll.com/privacy/" target="_blank"
+                                    class="cx-footer__link cx-text cx-text--m">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li class="cx-footer__links-list-item">
+                                <a href="#" class="cx-footer__link cx-text cx-text--m" onclick="event.preventDefault();
+            window.evidon.notice.showPreferencesDialog();">
+
+                                    Cookie Consent Tool
+                                </a>
+                            </li>
+
+
+                            <li class="cx-footer__links-list-item">
+                                <a href="https://www.sonypictures.com/corp/privacy.html#section11B" target="_blank"
+                                    class="cx-footer__link cx-text cx-text--m">AdChoices</a>
+                            </li>
+
+
+
+
+
+                            <li class="cx-footer__links-list-item">
+                                <a href="https://privacyportal-cdn.onetrust.com/dsarwebform/d19e506f-1a64-463d-94e4-914dd635817d/b9eb997c-9ede-451b-8fd4-29891782a928.html"
+                                    target="_blank" class="cx-footer__link cx-text cx-text--m">Your Privacy Choices</a>
+                                &ensp;
+                                <img src="/static/images/privacy-options.png" />
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                    <div class="cx-footer__bottom-section">
+                        <div class="cx-footer__sony-logo">
+                            <svg width="158" height="12" viewBox="0 0 158 12" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.066 8.446c.658.88 1.756 2.327 5.173 2.327 1.757 0 4.155-.503 4.155-2.28 0-3.476-9.94-.425-9.94-5.065C.455.991 2.697 0 5.802 0c3.01 0 4.86 1.242 5.644 2.343l-1.004.818c-.47-.535-1.568-1.997-4.671-1.997-2.29 0-3.905.597-3.905 2.044 0 3.46 9.94.158 9.94 5.285 0 1.918-1.85 3.507-5.722 3.507C2.352 12 .972 10.443 0 9.358l1.066-.912m18.843 2.327c2.775 0 5.268-1.478 5.268-4.954 0-2.548-1.96-4.655-5.268-4.655s-5.268 2.107-5.268 4.655c0 3.476 2.462 4.954 5.268 4.954zM19.91 0c3.872 0 6.679 2.265 6.679 6.07 0 4.058-3.387 5.93-6.679 5.93-3.292 0-6.679-1.872-6.679-5.93 0-3.805 2.807-6.07 6.68-6.07zm8.496.283h1.96l8.481 9.405V.283h1.38v11.434h-1.38L29.722 1.51v10.207h-1.317V.283m19.58 6.81-5.88-6.81h1.804l4.766 5.583L53.44.283h1.803l-5.88 6.81v4.624h-1.38V7.093m16.178-1.478H69.1c2.29 0 3.45-.488 3.45-2.045 0-1.573-1.16-2.06-3.45-2.06h-4.938v4.105zM62.782.283h6.679c2.305 0 4.405.66 4.405 3.271 0 2.627-2.1 3.287-4.405 3.287h-5.3v4.876h-1.379V.283zm13.043 11.434h1.38V.283h-1.38v11.434zm16.21-3.036C90.812 11.056 88.695 12 85.92 12c-4.42 0-6.506-2.658-6.506-5.977 0-3.931 2.65-6.023 6.491-6.023 2.446 0 4.938.944 5.957 3.271l-1.191.55c-.8-1.871-2.571-2.657-4.75-2.657-3.261 0-5.096 1.777-5.096 5.032 0 2.627 1.772 4.577 5.221 4.577 2.258 0 3.825-.944 4.766-2.69l1.223.598m6.27-7.171h-5.503V.283h12.385V1.51h-5.503v10.207h-1.38V1.51m20.474 5.504c0 4.137-3.214 4.986-5.863 4.986-2.65 0-5.863-.85-5.863-4.986V.284h1.38v6.73c0 2.627 1.677 3.822 4.483 3.822 2.806 0 4.484-1.195 4.484-3.822V.284h1.38v6.73m4.012-1.588h4.89c1.992 0 3.481-.283 3.481-1.966 0-1.667-1.49-1.95-3.48-1.95h-4.891v3.916zM121.41.283h6.584c1.82 0 4.484.393 4.484 3.193 0 2.39-2.21 3.082-3.59 3.145l3.763 5.096h-1.71l-3.668-5.065h-4.483v5.065h-1.38V.283zm13.544 0h10.16V1.51h-8.78v3.648h7.337v1.227h-7.337v4.105h8.967v1.227h-10.347V.283m12.306 8.163c.658.88 1.756 2.327 5.173 2.327 1.756 0 4.155-.503 4.155-2.28 0-3.476-9.94-.425-9.94-5.065C146.65.991 148.891 0 151.995 0c3.01 0 4.86 1.242 5.644 2.343l-1.003.818c-.47-.535-1.568-1.997-4.672-1.997-2.29 0-3.904.597-3.904 2.044 0 3.46 9.94.158 9.94 5.285 0 1.918-1.85 3.507-5.722 3.507-3.732 0-5.111-1.557-6.084-2.642l1.067-.912"
+                                    fill="#A0A0A0" fill-rule="nonzero" />
+                            </svg>
+                        </div>
+
+                        <div class="cx-text cx-text--m cx-footer__copy">
+                            &copy; Anime Mania, LLC
+                        </div>
+                        <div class="cx-language-select cx-footer__language-select">
+                            <div class="cx-language-select__trigger">
+                                <svg class="cx-language-select__icon" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" data-t="select-svg" aria-labelledby="select-svg"
+                                    aria-hidden="false" role="img">
+                                    <title id="select-svg">Select</title>
+                                    <path d="M7 10h10l-5 5z" />
+                                </svg>
+                                <span class="cx-cta cx-cta--m cx-language-select__value">English (US)</span>
+                            </div>
+                            <div class="cx-language-select__content">
+                                <div class="cx-language-select__mobile-header">
+                                    <h4 class="cx-text cx-text--l c-text--fixed-size cx-language-select__title">
+                                        Language
+                                    </h4>
+                                    <svg class="cx-language-select__icon" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" data-t="mobile-header-close-svg" aria-labelledby="cross-svg"
+                                        aria-hidden="false" role="img">
+                                        <title id="cross-svg">Close</title>
+                                        <path
+                                            d="M13.414 12l5.293-5.293a.999.999 0 1 0-1.414-1.414L12 10.586 6.707 5.293a.999.999 0 1 0-1.414 1.414L10.586 12l-5.293 5.293a.999.999 0 0 0 0 1.414.993.993 0 0 0 1.414 0L12 13.414l5.293 5.293a.999.999 0 1 0 1.414-1.414L13.414 12z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="cx-language-select__options-wrapper">
+                                    <div class="cx-language-select__option" value="en-US">
+                                        <span class="cx-text cx-text--m">English (US)</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="es-419">
+                                        <span class="cx-text cx-text--m">Español</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="es-ES">
+                                        <span class="cx-text cx-text--m">Español (España)</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="pt-BR">
+                                        <span class="cx-text cx-text--m">Português (Brasil)</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="pt-PT">
+                                        <span class="cx-text cx-text--m">Português (Portugal)</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="fr-FR">
+                                        <span class="cx-text cx-text--m">Français (France)</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="de-DE">
+                                        <span class="cx-text cx-text--m">Deutsch</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="ar-SA">
+                                        <span class="cx-text cx-text--m">العربية</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="it-IT">
+                                        <span class="cx-text cx-text--m">Italiano</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="ru-RU">
+                                        <span class="cx-text cx-text--m">Русский</span>
+                                    </div>
+                                    <div class="cx-language-select__option" value="hi-IN">
+                                        <span class="cx-text cx-text--m">हिन्दी</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <script src='/static/scripts/cookieConsentTool.e85a1797.js'></script>
+                <script>
+                    <!-- Need to wait for the evidon script to load before setting the language -->
+                    let maxPoll = Date.now() + 10000;
+                    var langCode = 'en-gb';
+
+                    function setLanguage() {
+                        if (Date.now() > maxPoll) {
+                            return;
+                        }
+                        if (window.evidon?.notice?.country) {
+                            if (window.evidon?.notice?.country.code == "us") {
+                                langCode = 'en-us';
+                            }
+
+                            window.evidon.notice.activateTranslations(langCode);
+                            return;
+                        }
+                        setTimeout(setLanguage, 100);
+                    };
+                    setTimeout(setLanguage, 100);
+                </script>
+            </footer>
+
+
+        </div>
+    </div>
+    <script src='/static/scripts/input.73d467a0.js'></script>
+    <script src='/static/scripts/languageSelect.cc7351b3.js'></script>
+    <script src='/static/scripts/button.58ed0f62.js'></script>
+
+    <script>
+        const RECAPTCHA_SITE_KEY = '6LeQj_wUAAAAABLdMxMxFF-x3Jvyd1hkbsRV9UAk';
+        const RECAPTCHA_ACTION = "register";
+    </script>
+    <script src='/static/scripts/attachRecaptcha.ef681f45.js'></script>
+
+</body>
+
+</html>

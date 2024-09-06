@@ -1,0 +1,75 @@
+/* Hi! 
+ * I'm glad you're exploring the source code. :) 
+ * Keep it up!
+*/
+
+body {
+    font-size: 16px;
+    font-family: "Helvetica", sans-serif;
+    line-height: 1.4;
+    color: #2f2b2b;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #efefef;
+    border-top: none;
+}
+
+
+h1 {
+    margin: 0 0 40px;
+    color: green;
+}
+
+h2 {
+    margin: 0 0 40px;
+    color: orangered;
+}
+
+a {
+    font-weight: bold;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: fuchsia;
+}
+
+a:hover {
+    color: firebrick;
+}
+
+ul li {
+    list-style-type: circle;
+    padding: 4px;
+}
+
+code {
+    background: lightyellow;
+    padding: 4px;
+}
+
+.note {
+    background: #efefef;
+    padding: 10px 16px;
+    display: inline-block;
+}
+
+.upcase {
+    text-transform: uppercase;
+}
+
+.read-more {
+    border: 2px solid red;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+ol {
+    float: left;
+}
+
+.float-cancel {
+    clear: left;
+}
