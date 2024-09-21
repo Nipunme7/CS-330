@@ -5,8 +5,7 @@
   <title>Hello</title>
   <!-- Bootstrap CSS -->
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
@@ -15,10 +14,11 @@
 </head>
 
 <body>
-  <div id="warnings"></div>
-  <h1 id="greeting"></h1>
-  <p id="numberInfo" class="alert alert-info"></p>
-  <table id="nPrimes" class="table table-striped">
+  <div id="warnings" class="container"></div>
+  <h1 class="is-size-2 container has-text-centered has-background-dark has-text-primary" id="greeting"></h1>
+  <p id="numberInfo"
+    class="alert alert-info is-size-3 container has-text-centered has-background-dark has-text-primary"></p>
+  <table id="nPrimes" class="table is-bordered is-striped is-narrow is-hoverable container">
     <thead></thead>
     <tbody></tbody>
   </table>

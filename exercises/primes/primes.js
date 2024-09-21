@@ -82,9 +82,9 @@ function printNPrimes(number, selector) {
     console.log(list_of_primes)
     let thead = document.querySelector('thead');
     let tbody = document.querySelector('tbody');
-    thead.innerHTML += `<tr class="is-danger"><td class ='heading'>First <b>${number}</b> primes</td></tr>`
+    thead.innerHTML += `<tr class="is-danger has-text-centered is-size-4"><td class ='heading'>First <b>${number}</b> primes</td></tr>`
     for (let prime of list_of_primes) {
-        tbody.innerHTML += `<tr class="is-success"><td>${prime}</td></tr>`
+        tbody.innerHTML += `<tr class="is-success has-text-centered is-size-4"><td>${prime}</td></tr>`
     }
 }
 
@@ -97,10 +97,10 @@ function printNPrimes(number, selector) {
 function displayWarnings(urlParams, selector) {
     let warning = document.querySelector(selector);
     if (urlParams.get('number') == null) {
-        warning.innerHTML += '<div class="warning number table is-bordered is-striped is-narrow is-hoverable"><span class="closebtn" onclick=\'this.parentElement.style.display="none";\'>&times;</span> No numbers were provided.</div>'
+        warning.innerHTML += '<div class="warning number has-text-right has-text-warning"><span class="closebtn" onclick=\'this.parentElement.style.display="none";\'>&times;</span> No numbers were provided.</div>'
     }
     if (urlParams.get('name') == null) {
-        warning.innerHTML += '<div class="warning name table is-bordered is-striped is-narrow is-hoverable" ><span class="closebtn" onclick=\'this.parentElement.style.display="none";\'>&times;</span> No names were provided.</div>'
+        warning.innerHTML += '<div class="warning name has-text-right has-text-warning"><span class="closebtn" onclick=\'this.parentElement.style.display="none";\'>&times;</span> No names were provided.</div>'
     }
 }
 
