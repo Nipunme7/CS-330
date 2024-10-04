@@ -12,9 +12,9 @@ var clearOnEntry;
  * @param {number} digit digit to add or display on the `outputScreen`
  */
 function enterDigit(digit) {
-    let display_element = document.querySelector("#result");
-    if (display_element.innerText == '0') { display_element.innerText = '' }
-    display_element.innerText += digit
+    let d_element = document.querySelector("#result");
+    if (d_element.innerText == '0') { d_element.innerText = '' }
+    d_element.innerText += digit
 }
 
 
@@ -22,8 +22,8 @@ function enterDigit(digit) {
  * Clear `outputScreen` and set value to 0
  */
 function clear_screen() {
-    let display_element = document.querySelector("#result");
-    display_element.innerText = 0
+    let d_element = document.querySelector("#result");
+    d_element.innerText = 0
 }
 
 
@@ -31,16 +31,16 @@ function clear_screen() {
  * Evaluate the expression and display its result or *ERROR*
  */
 function eval_expr() {
-    let display_element = document.querySelector("#result")
+    let d_element = document.querySelector("#result")
     let result;
     try {
-        result = eval(display_element.innerText);
+        result = eval(d_element.innerText);
     }
     catch {
         result = "ERROR"
     }
 
-    display_element.innerText = result;
+    d_element.innerText = result;
 }
 
 
@@ -50,8 +50,8 @@ function eval_expr() {
  * @param {string} operation to add to the expression
  */
 function enterOp(operation) {
-    let display_element = document.querySelector("#result");
-    display_element.innerText += operation
+    let d_element = document.querySelector("#result");
+    d_element.innerText += operation
 }
 
 

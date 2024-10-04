@@ -1,0 +1,20 @@
+# go to base folder (CS330) and
+source .venv/bin/activate
+
+# to deactivate to global
+deactivate
+
+# get files from roman's repo
+git pull pub main
+
+# add to working area (staging area)
+git add fileName
+# git add . (all files modified or new)
+
+# commit the files : take a screenshot of the working area
+git commit -m "Message goes here"
+
+# push to your repo's main
+git push origin main:main
+or shortcut:
+git push
