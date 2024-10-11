@@ -5,28 +5,33 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <form id=form_number>
-            <div>
-                <div>
-                    <label for="number">Enter a number</label>
-                    <input type="number" id="number" placeholder="Enter a number" />
+            <div class="row">
+                <div class="col-5" style="text-align: center;">
+                    <label for="number" class="fs-4 enter">Enter a number</label>
+                    <br />
+                    <input type="number" class="form-control" id="number" placeholder="Enter a number" />
                 </div>
-                <div>
-                    <label for="getThem">Click a button</label>
-                    <input type=button id="getInfo" onclick="clickedon()" value="Get Info!" />
+                <div class="col-5" style="text-align: center;">
+                    <label for="getThem" class="fs-4 click">Click a button</label>
+                    <br />
+                    <input class=" col-2 btn btn-primary" style="width: 90%;" type=button id="getInfo"
+                        onclick="clickedon()" value="Get Info!" />
                 </div>
-                <div>
-                    <label for=batch>Check a box to get 3 numbers at once</label>
-                    <input type="checkbox" value="" id="batch">
+                <div class="col" style="text-align: center;">
+                    <label for=batch class="fs-4">Get in batch</label>
+                    <br />
+                    <input class="box" type="checkbox" value="" id="batch">
                 </div>
             </div>
         </form>
     </div>
-    <div id=number_info>
+    <div id=number_info class="container">
 
     </div>
     <!-- JavaScript Bundle with Popper -->
