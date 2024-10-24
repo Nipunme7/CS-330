@@ -1,0 +1,422 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.custom-alert {
+    display: flex;
+    align-items: center;
+    color: red;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    display: none;
+}
+
+#feed_back_message {
+    color: red;
+}
+
+.search_bar {
+    position: relative;
+    width: 60px;
+    margin-top: 1rem;
+}
+
+.search_input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search_input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search_button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search_button:focus {
+    outline: none;
+}
+
+.table {
+    margin: auto;
+    margin-top: 1rem;
+    width: 44rem;
+    justify-content: center;
+}
+
+.flight_number {
+    margin: auto;
+    margin-top: 1.5rem;
+    padding-top: 0.5rem;
+    width: 41rem;
+}
+
+.flight_number .information1 {
+    background: linear-gradient(to right, #000000 0%, #3533CD 100%);
+    height: 3rem;
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.location .date_style {
+    font-size: larger;
+    text-align: center;
+    color: gray;
+}
+
+.location .location_style1 {
+    margin-top: -2rem;
+    margin-right: 3rem;
+    font-size: x-large;
+    text-align: center;
+}
+
+.location .location_style2 {
+    margin-top: -2rem;
+    margin-left: 3rem;
+    font-size: x-large;
+    text-align: center;
+}
+
+.airport .airport_location {
+    font-size: 6rem;
+    text-align: center;
+    margin-top: -3rem;
+    font-weight: bold;
+}
+
+.arrow {
+    margin-left: 0.5rem;
+    height: 3rem;
+    width: 5rem;
+}
+
+.time .time_style {
+    margin-top: -3.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    color: gray;
+}
+
+.time .flight_status {
+    margin-top: -2.25rem;
+    color: green;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.terminal .terminal_style_l_1 {
+    margin-top: -2rem;
+    font-size: large;
+    text-align: center;
+    color: gray;
+}
+
+.terminal .terminal_style_l_2 {
+    margin-top: -2rem;
+    font-size: large;
+    text-align: center;
+    margin-left: -7rem;
+    color: gray;
+}
+
+.terminal .terminal_style_r_2 {
+    margin-top: -2rem;
+    font-size: large;
+    text-align: right;
+    margin-right: 2rem;
+    color: gray;
+}
+
+.terminal .terminal_style_r_1 {
+    margin-top: -2rem;
+    font-size: large;
+    text-align: center;
+    margin-right: -7rem;
+    color: gray;
+}
+
+.weather .weatherheading {
+    margin-top: -.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+}
+
+.weather .temperature {
+    margin-top: -1.25rem;
+    font-size: 2rem;
+    font-weight: 200;
+    color: #333;
+    text-align: right;
+    margin-right: -0.5rem;
+}
+
+.weather .weatherinfo {
+    margin-left: -0.5rem;
+    margin-top: -1rem;
+    text-align: left;
+}
+
+.humidity,
+.windspeed {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+.streak {
+    margin-top: -1rem;
+    width: 0.1rem;
+    height: 3rem;
+    background-color: #aaa;
+}
+
+.col-custom {
+    width: 4.15%;
+}
+
+.tracking .contents {
+    border-radius: 40%;
+}
+
+.col-remainder {
+    width: 4.15%;
+}
+
+.trackingbutton1 {
+    color: white;
+    border-radius: 15px;
+    background-color: #004AAD;
+    text-align: center;
+    font-weight: 200;
+    font-size: small;
+    padding: 0.25rem 0;
+    margin-top: -0.5rem;
+    cursor: pointer;
+}
+
+.trackingbutton1 a {
+    text-decoration: none;
+}
+
+.trackingbutton2 {
+    color: white;
+    border-radius: 15px;
+    background-color: #ffba6b;
+    text-align: center;
+    font-weight: 200;
+    font-size: small;
+    padding: 0.25rem 0;
+    margin-top: -0.5rem;
+    cursor: pointer;
+}
+
+.trackingbutton2 a {
+    text-decoration: none;
+}
+
+.trackinglink {
+    text-decoration: none;
+    color: rgb(109, 255, 255);
+}
+
+.sms-form {
+    margin-top: -0.25rem;
+    display: none;
+    align-items: center;
+}
+
+.sms-form form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+    margin-left: -1rem;
+}
+
+.sms-form form label {
+    margin-right: 0.2rem;
+    font-weight: 500;
+}
+
+.sms-form form input {
+    border-radius: 5px;
+    border-color: #aaa;
+    margin-right: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: transparent;
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+    opacity: 1;
+    padding-left: 0.54rem;
+}
+
+.sms-form form input::placeholder {
+    color: gray;
+    font-size: 12px;
+    font-style: italic;
+    opacity: 1;
+    padding: 0.25rem;
+}
+
+.minimal-input {
+    margin-left: 0.25rem;
+    padding: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: auto;
+    min-width: 70px;
+}
+
+.submit-btn {
+    margin-left: 0.25rem;
+    background-color: #004AAD;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 200;
+    font-size: small;
+}
+
+.submit-btn:hover {
+    background-color: #00307d;
+}
+
+.info {
+    height: 35rem;
+    background-color: white;
+    border: white;
+    border-radius: 2rem;
+}
+
+.contents {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.section {
+    margin-top: 8rem;
+}
+
+#popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    /* Adjust the width as needed */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#qr-code {
+    width: 8rem;
+    height: auto;
+    margin-top: 1rem;
+}
+
+#close-popup {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 640px) {
+    .contents {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .contents {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contents {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .contents {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .contents

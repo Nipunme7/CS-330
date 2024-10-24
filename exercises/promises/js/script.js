@@ -15,7 +15,7 @@ function show_number(num, all_numbers, text) {
     main_div.setAttribute("class", "row")
 
     let number_div = document.createElement('div');
-    number_div.setAttribute("class", "col-6 fs-1")
+    number_div.setAttribute("class", "col-5 fs-1")
 
     let text_div = document.createElement('div');
     text_div.setAttribute("class", "alert alert-primary col-6")
