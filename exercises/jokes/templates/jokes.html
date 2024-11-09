@@ -1,16 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
 {% block content %}
-<div class="section">
-    <div class="container">
-        <h3 class="title is-3 has-text-centered">Jokes</h3>
-        {% if jokes %}
-        {% for joke in jokes %}
-        <p class="has-text-centered">{{ joke }}</p>
-        {% endfor %}
-        {% else %}
-        <p class="has-text-centered">No jokes to display.</p>
-        {% endif %}
-    </div>
-</div>
+<h2 class="subtitle">Here are your jokes:</h2>
+{% if jokes %}
+    {% for joke in jokes %}
+        <article class="message is-info">
+            <div class="message-body">{{ joke }}</div>
+        </article>
+    {% endfor %}
+{% else %}
+    <p>No jokes available for your selection. Please try again!</p>
+{% endif %}
 {% endblock %}

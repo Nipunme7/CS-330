@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, flash, make_response
+from flask import Flask, render_template, request, redirect, flash, url_for
 import pyjokes
 from pyjokes.exc import PyjokesError
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"  # Required for flash messages
+app.secret_key = "supersecretkey" 
 
-# Define constants globally to avoid redundancy
+# Language codes and names
 LANGUAGES = {
     "cs": "CZECH",
     "de": "GERMAN",
@@ -21,61 +21,59 @@ LANGUAGES = {
     "sv": "SWEDISH",
 }
 
-@app.get("/")
+CATEGORIES = ["all", "neutral", "chuck"]
+RANGE = list(range(1, 10))
+
+@app.route("/", methods=["GET", "POST"])
 def index():
-    """Render the form template."""
-    my_range = list(range(1, 10))
-    categorize = ["all", "neutral", "chuck"]
+    """Render the form template or the jokes based on the selected options."""
+    if request.method == "POST":
+        language = request.form.get("language", "en")
+        category = request.form.get("category", "neutral")
+        try:
+            number = int(request.form.get("number", 1))
+            if number not in RANGE:
+                raise ValueError
+        except ValueError:
+            flash("Please select a valid number of jokes between 1 and 9.")
+            return redirect(url_for("index"))
+
+        # Validate category and language
+        category = category if category in CATEGORIES else "neutral"
+        language = language if language in LANGUAGES else "en"
+
+        # Get jokes
+        jokes = get_jokes(language, category, number)
+        return render_template(
+            "jokes.html",
+            LANGUAGES=LANGUAGES,
+            CATEGORIES=CATEGORIES,
+            jokes=jokes,
+            RANGE=RANGE,
+            selected_language=language,
+            selected_category=category,
+            selected_number=number,
+        )
+
     return render_template(
         "base.html",
         LANGUAGES=LANGUAGES,
-        my_range=my_range,
-        categorize=categorize,
+        CATEGORIES=CATEGORIES,
+        RANGE=RANGE,
+        selected_language="en",
+        selected_category="neutral",
+        selected_number=1,
     )
 
-@app.post("/")
-def index_jokes():
-    """Render the template with jokes."""
-    # Retrieve form data with fallback defaults
-    my_range = list(range(1, 10))
-    categorize = ["all", "neutral", "chuck"]
-    category = request.form.get("category", "neutral")
-    language = request.form.get("language", "en")
-    if not request.form:
-        return redirect("Method not allowed", code=405)
-    try:
-        innernumber = int(request.form.get("number", 1))
-        if innernumber < 1 or innernumber > 9:
-            raise ValueError
-    except ValueError:
-        flash("Invalid number of jokes selected. Please select between 1 and 9.")
-        return redirect(url_for("index"))
-
-    if category not in categorize:
-        category = "neutral"
-    if language not in LANGUAGES:
-        language = "en"
-
-    jokes = get_jokes(language, category, innernumber)
-
-    return render_template(
-        "jokes.html",
-        LANGUAGES=LANGUAGES,
-        categorize=categorize,
-        jokes=jokes,
-        my_range=my_range,
-    )
 
 def get_jokes(language: str = "en", category: str = "all", number: int = 1) -> list[str]:
-    
-    """Return a list of jokes, limited by available jokes if needed."""
-    my_range = list(range(1, 10))
-    categorize = ["all", "neutral", "chuck"]
+    """Return a list of jokes based on language, category, and number."""
     try:
-        # Fetch the specified number of jokes
         jokes = pyjokes.get_jokes(language=language, category=category)
         return jokes[:number] if jokes else ["No jokes available for this selection."]
     except PyjokesError as e:
         print(f"Error fetching jokes: {e}")
         return ["No kidding!"]
 
+if __name__ == "__main__":
+    app.run(debug=True)

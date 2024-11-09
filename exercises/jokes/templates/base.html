@@ -1,74 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask for Fun</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .joke-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
     <div class="section">
-        <h1 class="title">Pick the language, the category, and the number of jokes to hear</h1>
+        <h1 class="title has-text-centered">Pick the Language, Category, and Number of Jokes to Hear</h1>
         <div class="container">
-            <form class="form" method="post" action="/">
-                <div class="columns is-multiline">
-                    <!-- Language Selection -->
+            <form method="post" action="/">
+                <div class="columns is-centered">
                     <div class="column is-one-third">
-                        <div class="field" id="fieldLanguage">
-                            <label class="label">Language</label>
-                            <div class="control select is-fullwidth">
-                                <select name="language" id="selLang">
-                                    {% for code, name in LANGUAGES.items() %}
-                                    <option value="{{ code }}">{{ name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                        <label for="selLang">Language</label>
+                        <div class="select is-fullwidth">
+                            <select name="language" id="selLang">
+                                {% for code, name in LANGUAGES.items() %}
+                                    <option value="{{ code }}" {% if code == selected_language %}selected{% endif %}>{{ name }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Category Selection -->
                     <div class="column is-one-third">
-                        <div class="field" id="fieldCategory">
-                            <label class="label">Category</label>
-                            <div class="control select is-fullwidth">
-                                <select name="category" id="selCat">
-                                    {% for cat in categorize %}
-                                    <option value="{{ cat }}">{{ cat.capitalize() }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                        <label for="selCat">Category</label>
+                        <div class="select is-fullwidth">
+                            <select name="category" id="selCat">
+                                {% for cat in CATEGORIES %}
+                                    <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat.capitalize() }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Number Selection -->
                     <div class="column is-one-third">
-                        <div class="field" id="fieldNumber">
-                            <label class="label">Number</label>
-                            <div class="control select is-fullwidth">
-                                <select name="number" id="selNum">
-                                    {% for num in my_range %}
-                                    <option value="{{ num }}">{{ num }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                        <label for="selNum">Number of Jokes</label>
+                        <div class="select is-fullwidth">
+                            <select name="number" id="selNum">
+                                {% for num in RANGE %}
+                                    <option value="{{ num }}" {% if num == selected_number %}selected{% endif %}>{{ num }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Submit Button -->
-                    <div class="column is-full">
-                        <div class="field">
-                            <button type="submit" id="btnAmuse" class="button is-primary is-fullwidth">
-                                Amuse me
-                            </button>
-                        </div>
-                    </div>
+                </div>
+                <div class="field">
+                    <button id="btnAmuse" type="submit" class="button is-primary is-fullwidth">Amuse Me!</button>
                 </div>
             </form>
         </div>
     </div>
-    {% block content %}{% endblock %}
+    <div class="section joke-container">
+        <div class="container" id="jokes">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 </body>
-
 </html>
