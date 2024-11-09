@@ -2,63 +2,59 @@
 <html>
 
 <head>
-    <title>Notebook</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
-    <script type="text/javascript" defer src=js/model.js></script>
-    <script type="text/javascript" defer src=js/view.js></script>
-    <script type="text/javascript" defer src=js/controller.js></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Flask for Fun</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 
 <body>
     <div class="section">
+        <h1 class="title">Pick the language, category, and number of jokes to hear</h1>
         <div class="container">
-            <h1 class="title">Notebook</h1>
-            <form id="noteForm">
-                <div id="fieldTitle" class="field">
-                    <label class="label">Title</label>
-                    <div class="control">
-                        <input id="title" class="input" type="text" placeholder="Note title" required>
+            <form method="post" action="/">
+                <div class="columns">
+                    <div class="column">
+                        <label for="selLang">Language</label>
+                        <div class="select is-fullwidth">
+                            <select name="language" id="selLang">
+                                {% for code, name in languages.items() %}
+                                <option value="{{ code }}" {% if code==selected_language %}selected{% endif %}>{{ name
+                                    }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <p class="help is-danger is-hidden">This field is required</p>
-                </div>
-
-                <div id="fieldColor" class="field">
-                    <label class="label">Color</label>
-                    <div class="control">
-                        <div class="select">
-                            <select id="color" required>
-                                <option value="is-primary">Primary</option>
-                                <option value="is-link">Link</option>
-                                <option value="is-info">Info</option>
-                                <option value="is-success">Success</option>
-                                <option value="is-warning">Warning</option>
-                                <option value="is-danger">Danger</option>
+                    <div class="column">
+                        <label for="selCat">Category</label>
+                        <div class="select is-fullwidth">
+                            <select name="category" id="selCat">
+                                {% for category in categories %}
+                                <option value="{{ category }}" {% if category==selected_category %}selected{% endif %}>
+                                    {{ category.title() }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label for="selNum">Number of Jokes</label>
+                        <div class="select is-fullwidth">
+                            <select name="number" id="selNum">
+                                {% for n in num_jokes %}
+                                <option value="{{ n }}" {% if n==selected_number %}selected{% endif %}>{{ n }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
                 </div>
-
-                <div id="fieldText" class="field">
-                    <label class="label">Text</label>
-                    <div class="control">
-                        <textarea id="text" class="textarea" placeholder="Note text" required></textarea>
-                    </div>
-                    <p class="help is-danger is-hidden">This field is required</p>
-                </div>
-
                 <div class="field">
-                    <div class="control">
-                        <button id="addNote" class="button is-primary" type="submit">Add Note</button>
-                    </div>
+                    <button id="btnAmuse" type="submit" class="button is-primary is-fullwidth">Amuse me</button>
                 </div>
             </form>
         </div>
     </div>
-
     <div class="section">
-        <div class="container" id="notesContainer">
-            <!-- Notes will be dynamically added here -->
+        <div class="container" id="jokes">
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
 </body>

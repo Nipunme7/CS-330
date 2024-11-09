@@ -1,53 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask for Fun</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 
-<body class="bg-light">
-    <div class="container mt-5">
-        <div class="text-center mb-4">
-            <a href="/" class="btn btn-primary">Home</a>
-        </div>
-        <div class="text-center mb-5">
-            <h2>Pick the category, language, and number of jokes to hear</h2>
-        </div>
-        <form method="POST" class="mb-5">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <label for="category">Category</label>
-                    <select name="category" id="selCat" class="form-control">
-                        <!-- TODO: Populate categories -->
-                    </select>
+<body>
+    <div class="section">
+        <h1 class="title">Pick the language, the category, and the number of jokes to hear</h1>
+        <div class="container">
+            <form class="form" method="post" action="/">
+                <div class="columns is-multiline">
+                    <!-- Language Selection -->
+                    <div class="column is-one-third">
+                        <div class="field" id="fieldLanguage">
+                            <label class="label">Language</label>
+                            <div class="control select is-fullwidth">
+                                <select name="language" id="selLang">
+                                    {% for code, name in LANGUAGES.items() %}
+                                    <option value="{{ code }}">{{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Selection -->
+                    <div class="column is-one-third">
+                        <div class="field" id="fieldCategory">
+                            <label class="label">Category</label>
+                            <div class="control select is-fullwidth">
+                                <select name="category" id="selCat">
+                                    {% for cat in categorize %}
+                                    <option value="{{ cat }}">{{ cat.capitalize() }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Number Selection -->
+                    <div class="column is-one-third">
+                        <div class="field" id="fieldNumber">
+                            <label class="label">Number</label>
+                            <div class="control select is-fullwidth">
+                                <select name="number" id="selNum">
+                                    {% for num in my_range %}
+                                    <option value="{{ num }}">{{ num }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="column is-full">
+                        <div class="field">
+                            <button type="submit" id="btnAmuse" class="button is-primary is-fullwidth">
+                                Amuse me
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <label for="language">Language</label>
-                    <select name="language" id="selLang" class="form-control">
-                        <!-- TODO: Populate languages -->
-                    </select>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="number">Number</label>
-                    <select name="number" id="selNum" class="form-control">
-                        <!-- TODO: Populate numbers -->
-                    </select>
-                </div>
-            </div>
-            <div class="text-center">
-                <button type="submit" id="btnAmuse" class="btn btn-success">Amuse me</button>
-            </div>
-        </form>
-        <div id="jokes" class="text-center">
-            <!-- This is a placeholder for jokes -->
+            </form>
         </div>
     </div>
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% block content %}{% endblock %}
 </body>
 
 </html>
