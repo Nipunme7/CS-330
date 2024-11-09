@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash, url_for
+from flask import Flask, render_template, request, redirect, flash, url_for, abort
 import pyjokes
 from pyjokes.exc import PyjokesError
 
@@ -27,6 +27,9 @@ RANGE = list(range(1, 10))
 @app.route("/", methods=["GET", "POST"])
 def index():
     """Render the form template or the jokes based on the selected options."""
+    if not request.method:
+        return redirect("Method not allowed", code=405)
+
     if request.method == "POST":
         language = request.form.get("language", "en")
         category = request.form.get("category", "neutral")
@@ -55,6 +58,7 @@ def index():
             selected_number=number,
         )
 
+    # If GET request, render the form
     return render_template(
         "base.html",
         LANGUAGES=LANGUAGES,
