@@ -14,30 +14,33 @@ import pytest
 from playwright.sync_api import Page
 
 TIMEOUT = 1000
-APP_URL = "http://localhost:8000/"
 
+# Use environment variable for API URL or default to localhost
+APP_URL = os.getenv('JOKES_APP_URL', 'http://localhost:8000/')
+API_URL = os.getenv('JOKES_API_URL', 'http://localhost:5000/api/v1/jokes/')
+# API_URL = os.getenv('JOKES_API_URL', 'https://Nipun007.pythonanywhere.com/api/v1/jokes/');
 
 def setup_module(module):
     """Set up servers"""
-    # Create the front-end server fixture
-    module.fserver = subprocess.Popen(
-        ["python", "-m", "http.server", "-d", "projects/jokes_api/client"]
-    )
-    # Create the back-end server fixture
-    os.chdir("projects/jokes_api/server")
-    module.bserver = subprocess.Popen(["flask", "run"])
-    try:
-        module.fserver.wait(timeout=1)
-        module.bserver.wait(timeout=1)
-    except subprocess.TimeoutExpired:
-        pass
-
+    if 'localhost' in API_URL:
+        # Only start local servers if using localhost
+        module.fserver = subprocess.Popen(
+            ["python", "-m", "http.server", "-d", "projects/jokes_api/client"]
+        )
+        os.chdir("projects/jokes_api/server")
+        module.bserver = subprocess.Popen(["flask", "run"])
+        try:
+            module.fserver.wait(timeout=1)
+            module.bserver.wait(timeout=1)
+        except subprocess.TimeoutExpired:
+            pass
 
 def teardown_module(module):
     """Stop the server"""
-    module.fserver.terminate()
-    module.bserver.terminate()
-
+    if 'localhost' in API_URL:
+        # Only stop servers if they were started locally
+        module.fserver.terminate()
+        module.bserver.terminate()
 
 def test_click_button(page: Page):
     """Click a button without selecting any category/language"""
@@ -45,7 +48,6 @@ def test_click_button(page: Page):
     page.goto(APP_URL)
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == 1
-
 
 @pytest.mark.parametrize(
     "language, number",
@@ -74,7 +76,6 @@ def test_get_all_jokes(page: Page, language: str, number: int) -> None:
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == number
 
-
 @pytest.mark.parametrize(
     "language, category, number",
     product(
@@ -92,7 +93,6 @@ def test_get_n_jokes(page: Page, language: str, category: str, number: int) -> N
     page.select_option("#selNum", str(number))
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == number
-
 
 @pytest.mark.parametrize(
     "language, category, number",
@@ -112,7 +112,6 @@ def test_get_fewer_jokes(page: Page, language: str, category: str, number: int) 
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == number
 
-
 @pytest.mark.parametrize(
     "language",
     ["eu", "fr", "gl", "lt", "sv"],
@@ -125,7 +124,6 @@ def test_get_chuck_error(page: Page, language: str) -> None:
     page.select_option("#selLang", language)
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == 1
-
 
 @pytest.mark.parametrize(
     "language, category",
@@ -142,7 +140,6 @@ def test_get_a_joke(page: Page, language: str, category: str) -> None:
     page.select_option("#selCat", category)
     page.click("#btnAmuse")
     assert len(page.query_selector_all("#jokes > article")) == 1
-
 
 @pytest.mark.parametrize(
     "joke_id, joke_text",
@@ -183,7 +180,6 @@ def test_get_the_joke(page: Page, joke_id: int, joke_text: str) -> None:
     page.click("#btnAmuse")
     assert page.query_selector_all("#jokes > article")[0].inner_text() == joke_text
 
-
 @pytest.mark.parametrize(
     "joke_id, error_message",
     [
@@ -197,7 +193,6 @@ def test_get_the_joke_error(page: Page, joke_id: int, error_message: str) -> Non
     page.fill("#jokeId", str(joke_id))
     page.click("#btnAmuse")
     assert page.query_selector_all("#jokes > article")[0].inner_text() == error_message
-
 
 if __name__ == "__main__":
     pytest.main(["-v", __file__])

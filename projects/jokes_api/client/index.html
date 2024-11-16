@@ -1,48 +1,87 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Jokes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="text-center"><a href="/" class="btn btn-outline-primary">Home</a></div>
-        <div class="text-center">
-            <h2>Jokes for all</h2>
-        </div>
-        <div class="row text-center">
-            <div class="col col-md-3">
-                <label for="category" value="Category">Category</label>
-                <select class="form-select" name="category" id="selCat">
-                    <!-- TODO: Populate categories -->
-                </select>
-            </div>
-            <div class="col col-md-3">
-                <label for="language" value="Language">Language</label>
-                <select name="language" id="selLang" class="form-select">
-                    <!-- TODO: Populate languages -->
-                </select>
-            </div>
-            <div class="col col-md-3">
-                <label for="number" value="Number">Number</label>
-                <input type="number" name="number" id="number" class="form-select">
-            </div>
-            <div class="col col-md-3">
-                <label for="id" value="Id">Id</label>
-                <input type="number" name="id" id="joke_id" class="form-select" min="1">
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Jokes for All</h1>
+                <p class="subtitle">Find the best jokes and have a laugh!</p>
+                <a href="/" class="button is-light is-rounded">Home</a>
             </div>
         </div>
-        <div>
-            <div class="text-center" style="margin-top: 15px;">
-                <button class="btn btn-primary" type="submit" id="btnAmuse" value="Tell me a joke"
-                    onclick="fetch_jokes()">Amuse me</button>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-quarter">
+                    <div class="field">
+                        <label class="label has-text-primary" for="category">Category</label>
+                        <div class="control">
+                            <div class="select is-primary is-fullwidth">
+                                <select name="category" id="selCat">
+                                    <!-- TODO: Populate categories -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="field">
+                        <label class="label has-text-info" for="language">Language</label>
+                        <div class="control">
+                            <div class="select is-info is-fullwidth">
+                                <select name="language" id="selLang">
+                                    <!-- TODO: Populate languages -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="field">
+                        <label class="label has-text-success" for="number">Number</label>
+                        <div class="control">
+                            <div class="select is-success is-fullwidth">
+                                <select name="number" id="selNum">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-quarter">
+                    <div class="field">
+                        <label class="label has-text-danger" for="jokeId">Id</label>
+                        <div class="control">
+                            <input type="number" name="id" id="jokeId" class="input is-danger" placeholder="Enter ID"
+                                min="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="has-text-centered mt-5">
+                <button class="button is-warning is-medium is-rounded" type="submit" id="btnAmuse"
+                    value="Tell me a joke" onclick="fetch_jokes()">Amuse me</button>
+            </div>
+
+            <div id="jokes" class="content mt-5">
+                <!-- Jokes will appear here -->
             </div>
         </div>
-        <div id="jokes">
-        </div>
-    </div>
+    </section>
 </body>
 <script src="script.js"></script>
 
