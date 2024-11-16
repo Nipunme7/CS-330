@@ -2,6 +2,8 @@
 
 var BASE_URL = "https://Nipun007.pythonanywhere.com/api/v1/jokes/";
 
+// BASE_URL = 'http://localhost:5000/api/v1/jokes/';
+
 const LANGUAGE_NAMES = {
     'cs': 'Czech',
     'de': 'German',
