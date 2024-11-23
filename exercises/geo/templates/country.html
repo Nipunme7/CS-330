@@ -1,4 +1,12 @@
 {% extends "index.html" %}
 {% block form %}
-
+<form method="get" class="form">
+    <select name="country" id="selCountry">
+        {% for country in countries %}
+        <option value="{{ country[0] }}">{{ country[0] }}</option>
+        {% endfor %}
+    </select>
+    <input type="button" id="btnInfo" value="Get Info"
+        onclick="location.href='/country/' + document.getElementById('selCountry').value;">
+</form>
 {% endblock form %}

@@ -5,6 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World data</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .cell {
+            padding: 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .cell a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #information {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #information th,
+        #information td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        #information th {
+            background-color: #f4f4f4;
+        }
+
+        .form {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        select,
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function submitForm(type) {
+            const select = document.getElementById(`sel${type}`);
+            const value = select.value;
+            window.location.href = `/${type.toLowerCase()}/${value}`;
+            return false;
+        }
+    </script>
 </head>
 
 <body>

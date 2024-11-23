@@ -1,4 +1,12 @@
 {% extends "index.html" %}
 {% block form %}
-
+<form method="get" class="form">
+    <select name="subregion" id="selSubregion">
+        {% for subregion in subregions %}
+        <option value="{{ subregion[0] }}">{{ subregion[0] }}</option>
+        {% endfor %}
+    </select>
+    <input type="button" id="btnInfo" value="Get Info"
+        onclick="location.href='/subregion/' + document.getElementById('selSubregion').value;">
+</form>
 {% endblock form %}

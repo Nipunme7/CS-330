@@ -1,10 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% block form%}
+{% block form %}
 {% endblock form %}
 
 {% block data %}
+<table id="information">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Region</th>
+            <th>Subregion</th>
+            <th>Area</th>
+            <th>Population (2023)</th>
+            <th>Density</th>
+            <th>Government</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if data %}
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] if row[5] is not none else 'N/A' }}</td>
+            <td>{{ row[6] if row[6] is not none else 'N/A' }}</td>
+            <td>{{ row[7] }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
 {% endblock data %}
 
 {% endblock content %}

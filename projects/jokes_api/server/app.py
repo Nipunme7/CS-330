@@ -55,7 +55,6 @@ def api_response(lang="en", category="all", number=1, id=None):
 def get_joke(language: str = "en", category: str = "all", number: int = 1) -> Response:
     if category == 'chuck' and language in LANGUAGE_NAMES:
         abort(404, description=f"There are no chuck jokes in {LANGUAGE_NAMES[language]}")
-
     jokes = {
         'language': language,
         'category': category,
@@ -70,11 +69,7 @@ def get_joke(language: str = "en", category: str = "all", number: int = 1) -> Re
 
     try:
         if number >= len(all_jokes):
-            indexes = range(len(all_jokes))
-            jokes['number'] = len(all_jokes)
-        else:
-            indexes = random.sample(range(len(all_jokes)), k=number)
-    except ValueError:
+            indexes = range(len(all_jokes)) jokes['number'] = len(all_jokes) else: indexes = random.sample(range(len(all_jokes)), k=number) except ValueError:
         indexes = range(len(all_jokes))
         jokes['number'] = len(all_jokes)
 
