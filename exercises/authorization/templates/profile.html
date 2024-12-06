@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .profile-container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            color: #4285f4;
+            margin-bottom: 15px;
+        }
+
+        .email-message {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .user-name {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .user-email {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .logout-btn {
+            background-color: #db4437;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <img src="{{ user.picture }}" alt="Profile Picture" class="profile-picture">
+        <div class="welcome-message">Hello {{ user.name }}, you have logged in!</div>
+        <div class="email-message">Your email: {{ user.email }}</div>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</body>
+
+</html>
