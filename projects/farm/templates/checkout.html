@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mb-5">Your Cart</h1>
+
+    {% if items %}
+    <div class="row">
+        <div class="col-lg-8">
+            {% for index in items %}
+            <div class="card mb-3 product-card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{id_products_dict[index].link}}" class="img-fluid rounded-start"
+                            alt="{{id_products_dict[index].name}}" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">{{id_products_dict[index].name}}</h5>
+                                <form action="/remove/{{index}}" method="post" style="display: inline;">
+                                    <button class="btn btn-link text-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <form action="/checkout" method="post">
+                                <input name="id" value="{{id_products_dict[index].id}}" hidden>
+                                <div class="mb-3">
+                                    <label class="form-label">Quantity</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-outline-secondary"
+                                            onclick="updateCartItem({{id_products_dict[index].id}}, -1, {{id_products_dict[index].price}}, {{id_products_dict[index].quantity}})">
+                                            <i class="bi bi-dash"></i>
+                                        </button>
+                                        <input type="number" class="form-control text-center" name="quantity"
+                                            id="quantity_input_{{id_products_dict[index].id}}" value="{{items[index]}}"
+                                            min="0" max="{{id_products_dict[index].quantity}}"
+                                            onchange="validateCartQuantity(this, {{id_products_dict[index].id}}, {{id_products_dict[index].price}}, {{id_products_dict[index].quantity}})">
+                                        <button type="button" class="btn btn-outline-secondary"
+                                            onclick="updateCartItem({{id_products_dict[index].id}}, 1, {{id_products_dict[index].price}}, {{id_products_dict[index].quantity}})">
+                                            <i class="bi bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="text-end mt-2">
+                                        <span class="text-muted" id="total_display_{{id_products_dict[index].id}}">
+                                            Total: ${{"%.2f"|format(id_products_dict[index].price * items[index])}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm">
+                                    Update Quantity
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="order_process()">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center">
+        <i class="bi bi-cart-x" style="font-size: 4rem;"></i>
+        <h3 class="mt-3">Your cart is empty</h3>
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">
+            Continue Shopping
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    function updateCartItem(id, change, price, maxQuantity) {
+        const input = document.getElementById(`quantity_input_${id}`);
+        let newValue = parseInt(input.value) + change;
+
+        // Ensure the value stays within bounds
+        newValue = Math.max(0, Math.min(newValue, maxQuantity));
+
+        input.value = newValue;
+        updateCartTotal(id, newValue, price);
+    }
+
+    function validateCartQuantity(input, id, price, maxQuantity) {
+        let value = parseInt(input.value) || 0;
+        value = Math.max(0, Math.min(value, maxQuantity));
+        input.value = value;
+        updateCartTotal(id, value, price);
+    }
+
+    function updateCartTotal(id, quantity, price) {
+        const total = (price * quantity).toFixed(2);
+        document.getElementById(`total_display_${id}`).textContent = `Total: $${total}`;
+    }
+</script>
+{% endblock %}

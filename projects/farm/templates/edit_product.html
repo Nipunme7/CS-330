@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">
+            {% if product.id %}Edit Product{% else %}Add New Product{% endif %}
+          </h2>
+
+          <form
+            action="{% if product.id %}{{ url_for('modify', id=product.id) }}{% else %}{{ url_for('add_product') }}{% endif %}"
+            method="post">
+
+            <div class="mb-3">
+              <label class="form-label">Product Name</label>
+              <input type="text" class="form-control" name="name" value="{{product.name}}" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" name="description" rows="3" required>{{product.description}}</textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Price ($)</label>
+                <input type="number" class="form-control" name="price" value="{{product.price}}" step="0.01" min="0"
+                  required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Quantity</label>
+                <input type="number" class="form-control" name="quantity" value="{{product.quantity}}" min="0" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Availability</label>
+              <select class="form-select" name="availability">
+                <option value="true" {% if product.available %}selected{% endif %}>
+                  Available
+                </option>
+                <option value="false" {% if not product.available %}selected{% endif %}>
+                  Not Available
+                </option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Image Link</label>
+              <input type="url" class="form-control" name="link" id="imageLink" value="{{product.link}}" required
+                onchange="previewImage(this.value)">
+              <small class="text-muted">Enter a direct link to an image (ends with .jpg, .png, etc.) or use a local
+                image path (../static/images/...)</small>
+              <div class="mt-2">
+                <img id="imagePreview" src="{{product.link}}"
+                  style="max-width: 200px; max-height: 200px; display: {% if product.link %}block{% else %}none{% endif %};"
+                  class="img-thumbnail">
+                <div id="imageError" class="text-danger" style="display: none;">
+                  Unable to load image. Please check the URL.
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-lg"></i>
+                {% if product.id %}Update Product{% else %}Add Product{% endif %}
+              </button>
+              <a href="{{ url_for('admin') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-x"></i> Cancel
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function previewImage(url) {
+    const preview = document.getElementById('imagePreview');
+    const error = document.getElementById('imageError');
+
+    preview.style.display = 'none';
+    error.style.display = 'none';
+
+    if (!url) return;
+
+    preview.src = url;
+    preview.onload = function () {
+      preview.style.display = 'block';
+      error.style.display = 'none';
+    };
+    preview.onerror = function () {
+      preview.style.display = 'none';
+      error.style.display = 'block';
+    };
+  }
+</script>
+{% endblock %}

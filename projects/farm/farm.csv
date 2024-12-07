@@ -1,0 +1,6 @@
+id,name,price,description,quantity,available,link
+1,Chicken,12.99,"Farm-raised, free-range chicken, locally sourced for maximum freshness and flavor",15,True,"../static/images/Chicken.jpg"
+2,Cheese,6.99,"Artisanal cheese made from organic milk, aged to perfection with a smooth, rich texture",50,False,"../static/images/Cheese.jpg"
+3,Watermelon,7.50,"Locally grown, sun-ripened watermelon bursting with sweetness - perfect for hot summer days",45,True,"../static/images/Watermelon.jpg"
+4,Pork,11.99,"Premium cuts of pasture-raised pork from our family farm, known for exceptional tenderness",0,False,"../static/images/Pork.jpg"
+5,Eggs,5.99,"Farm-fresh organic eggs from free-range hens, rich in flavor with golden yolks",120,True,"../static/images/Eggs.jpg"
