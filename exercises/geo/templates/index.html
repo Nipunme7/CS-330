@@ -2,6 +2,20 @@
 {% block content %}
 
 {% block form %}
+<div class="search-container">
+    <form action="{{ url_for('index') }}" method="GET" class="search-form">
+        <div class="form-group">
+            <input type="text" name="search" placeholder="Search countries..." value="{{ request.args.get('search', '') }}">
+            <select name="filter">
+                <option value="name" {% if request.args.get('filter') == 'name' %}selected{% endif %}>Name</option>
+                <option value="capital" {% if request.args.get('filter') == 'capital' %}selected{% endif %}>Capital</option>
+                <option value="region" {% if request.args.get('filter') == 'region' %}selected{% endif %}>Region</option>
+                <option value="subregion" {% if request.args.get('filter') == 'subregion' %}selected{% endif %}>Subregion</option>
+            </select>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+</div>
 {% endblock form %}
 
 {% block data %}
@@ -22,10 +36,10 @@
         {% if data %}
         {% for row in data %}
         <tr>
-            <td>{{ row[0] }}</td>
+            <td><a href="{{ url_for('country', country_name=row[0]) }}">{{ row[0] }}</a></td>
             <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
-            <td>{{ row[3] }}</td>
+            <td><a href="{{ url_for('region', region_name=row[2]) }}">{{ row[2] }}</a></td>
+            <td><a href="{{ url_for('subregion', subregion_name=row[3]) }}">{{ row[3] }}</a></td>
             <td>{{ row[4] }}</td>
             <td>{{ row[5] if row[5] is not none else 'N/A' }}</td>
             <td>{{ row[6] if row[6] is not none else 'N/A' }}</td>
